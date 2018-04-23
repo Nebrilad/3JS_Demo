@@ -15,7 +15,7 @@ function SceneObjects(scene) {
   onRenderFcts.push(function(delta){
     earthMesh.rotation.y  += 1/32 * delta;
   });
-
+/**
   let cloudMesh	= THREEx.Planets.createEarthCloud();
   cloudMesh.scale.set(earthDimension,earthDimension,earthDimension);
   cloudMesh.position.add(earthMesh.position);
@@ -23,6 +23,7 @@ function SceneObjects(scene) {
   onRenderFcts.push(function(delta){
     cloudMesh.rotation.y  += 1/16 * delta;
   });
+  **/
   //TODO Simulation ON/OFF END
 
   let moonMesh	= THREEx.Planets.createMoon();
@@ -41,9 +42,12 @@ function SceneObjects(scene) {
   // create the geometry sphere
   let startFieldGeometry  = new THREE.SphereGeometry(50, 32, 32);
   // create the material, using a texture of startfield
+  /**
   let startFieldMaterial  = new THREE.MeshBasicMaterial();
   startFieldMaterial.map   = textureLoader.load('js/Universe/images/galaxy_starfield.png');
   startFieldMaterial.side  = THREE.BackSide;
+  **/
+  let startFieldMaterial  = new THREE.MeshBasicMaterial({color: 0x3c3c3c, side: THREE.BackSide});
   // create the mesh based on geometry and material
   let startFieldMesh  = new THREE.Mesh(startFieldGeometry, startFieldMaterial);
   scene.add(startFieldMesh);

@@ -1,10 +1,8 @@
 [
-  './js/Fireworks/SceneSubjects/Particle.js',
-  './js/Fireworks/SceneSubjects/ParticleSystem.js',
-  './js/Fireworks/SceneSubjects/GeneralLights.js',
-  './js/Fireworks/SceneSubjects/SceneObjects.js',
-  './js/Fireworks/SceneManager.js',
-  './js/Fireworks/Main.js'
+  './js/LowPoly/SceneSubjects/GeneralLights.js',
+  './js/LowPoly/SceneSubjects/SceneObjects.js',
+  './js/LowPoly/SceneManager.js',
+  './js/LowPoly/Main.js'
 ].forEach(function(src) {
   let script = document.createElement('script');
   let body = document.body || document.getElementsByTagName('body')[0];
@@ -18,7 +16,7 @@
     };
   } else {  //Others
     script.onload = function(){
-      if(src == './js/Fireworks/Main.js'){
+      if(src == './js/LowPoly/Main.js'){
         loadMain();
       }
     };

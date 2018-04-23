@@ -21,3 +21,8 @@ Choose which demo you want to run.
   ###### UNIVERSE Demo:
 
   FPS really low for high numbers of geometry
+
+
+#### TODO
+
+  UNIVERSE should work even locally, by not using any texture files

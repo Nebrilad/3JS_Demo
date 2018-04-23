@@ -105,18 +105,18 @@ function SpaceShip(scene, sceneObjects){
     spline = new THREE.CatmullRomCurve3([
        new THREE.Vector3(2, 0, 0),
        nextStartPoint,
-       new THREE.Vector3(2.75, 0, 2.75),
-       new THREE.Vector3(0, 0, 4),
-       new THREE.Vector3(-2.75, 0, 2.75),
-       new THREE.Vector3(-4, 0, 0),
-       new THREE.Vector3(-2.75, 0, -2.75),
-       new THREE.Vector3(0, 0, -4),
-       new THREE.Vector3(2.75, 0, -2.75),
+       new THREE.Vector3(2.75, 1, 2.75),
+       new THREE.Vector3(0, 2, 4),
+       new THREE.Vector3(-2.75, -1, 2.75),
+       new THREE.Vector3(-4, -2, 0),
+       new THREE.Vector3(-2.75, 1, -2.75),
+       new THREE.Vector3(0, 2, -4),
+       new THREE.Vector3(2.75, -1, -2.75),
        nextStartPoint
     ]);
     let numPoints = 50;//spline.points.length-1;
     let material = new THREE.LineBasicMaterial({
-        color: 0xffffff,
+        color: 0x00dd00,
     });
     let geometry = new THREE.Geometry();
     let splinePoints = spline.getPoints(numPoints);
@@ -179,6 +179,10 @@ function SpaceShip(scene, sceneObjects){
 
         //remove ship when landed on moon
         if(shipsArray[i].position.distanceTo(moonMesh.position)<0.5){
+          shipsArray[i].children[0].geometry.dispose();
+          shipsArray[i].children[0].material.dispose();
+          shipsArray[i].children[0] = undefined;
+          shipsArray[i].children.splice(0,1);
           scene.remove( shipsArray[i] );
           shipsArray.splice(i, 1);
           i--;

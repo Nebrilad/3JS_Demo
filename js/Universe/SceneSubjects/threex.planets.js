@@ -46,6 +46,15 @@ THREEx.Planets.createVenus = function(){
 
 THREEx.Planets.createEarth = function(){
 	var geometry= new THREE.SphereGeometry(defaultRadius, 32, 32)
+
+	var material	= new THREE.MeshPhongMaterial({
+		map		: textureLoader.load(THREEx.Planets.baseURL+'images/01_earthmap1k.jpg'),
+		bumpMap		: textureLoader.load(THREEx.Planets.baseURL+'images/01_earthbump1k.jpg'),
+		bumpScale	: 0.05,
+		specularMap	: textureLoader.load(THREEx.Planets.baseURL+'images/01_earthspec1k.jpg'),
+		specular	: new THREE.Color('grey'),
+		vertexColors: THREE.FaceColors
+	});
 	/**
 	for ( var i = 0; i < geometry.faces.length; i++ ) {
 		face = geometry.faces[ i ];
@@ -53,14 +62,6 @@ THREEx.Planets.createEarth = function(){
 	}
 	var material = new THREE.MeshBasicMaterial( {color: 0xffffff,vertexColors: THREE.FaceColors} )
 	**/
-	var material	= new THREE.MeshPhongMaterial({
-		map		: textureLoader.load(THREEx.Planets.baseURL+'images/02_earthmap1k.jpg'),
-		bumpMap		: textureLoader.load(THREEx.Planets.baseURL+'images/02_earthbump1k.jpg'),
-		bumpScale	: 0.05,
-		specularMap	: textureLoader.load(THREEx.Planets.baseURL+'images/02_earthspec1k.jpg'),
-		specular	: new THREE.Color('grey'),
-		vertexColors: THREE.FaceColors
-	})
 	var mesh	= new THREE.Mesh(geometry, material)
 	return mesh
 }
@@ -126,11 +127,20 @@ THREEx.Planets.createEarthCloud	= function(){
 
 THREEx.Planets.createMoon	= function(){
 	var geometry	= new THREE.SphereGeometry(defaultRadius, 32, 32)
+
 	var material	= new THREE.MeshPhongMaterial({
 		map	: textureLoader.load(THREEx.Planets.baseURL+'images/moonmap1k.jpg'),
 		bumpMap	: textureLoader.load(THREEx.Planets.baseURL+'images/moonbump1k.jpg'),
 		bumpScale: 0.002,
 	})
+	/**
+	for ( var i = 0; i < geometry.faces.length; i++ ) {
+		face = geometry.faces[ i ];
+		random = 0.8 * Math.random() + 0.2;
+		face.color.setRGB( random, random,random );
+	}
+	var material = new THREE.MeshBasicMaterial( {color: 0xffffff,vertexColors: THREE.FaceColors} )
+	**/
 	var mesh	= new THREE.Mesh(geometry, material)
 	return mesh
 }
