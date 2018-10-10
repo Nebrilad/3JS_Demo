@@ -6,4 +6,5 @@ function SceneObjects(scene, screenDimensions ) {
 	this.update = function(delta,time) {
 		animate(time);
 	}
+	/**Comment**/
 }
