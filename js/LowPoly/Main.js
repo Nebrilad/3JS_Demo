@@ -43,6 +43,7 @@ function initialize(){
   }
 }
 
+/**const rand = (min,max) => min + Math.random()*(max-min);**/
 function randomMaxMin(min,max){
   return Math.random() * (max - min) + min;
 }
