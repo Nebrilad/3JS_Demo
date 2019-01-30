@@ -1,4 +1,5 @@
 [
+  './js/LowPoly/SceneSubjects/CellularAutomata.js',
   './js/LowPoly/SceneSubjects/GeneralLights.js',
   './js/LowPoly/SceneSubjects/SceneObjects.js',
   './js/LowPoly/SceneManager.js',

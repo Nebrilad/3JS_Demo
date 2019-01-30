@@ -44,8 +44,8 @@ function SceneManager(canvas) {
     const nearPlane = .01;
     const farPlane = 1000;
     const camera = new THREE.PerspectiveCamera(fieldOfView, aspectRatio, nearPlane, farPlane);
-    camera.position.set(-3, 3, 4); //-6, 6, 8
-    camera.lookAt(new THREE.Vector3(0, 0, 0));
+    camera.position.set(19,16,20);
+    //camera.lookAt(new THREE.Vector3(0, 0, 0));
 
     return camera;
   }
@@ -73,6 +73,7 @@ function SceneManager(canvas) {
       sceneSubjects[i].update(delta,clock);
     }
 
+    //console.log("camera: "+camera.position.x+" "+camera.position.y+" "+camera.position.z);
     renderer.render(scene, camera);
   }
 

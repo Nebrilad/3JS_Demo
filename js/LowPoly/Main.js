@@ -48,6 +48,18 @@ function randomMaxMin(min,max){
   return Math.random() * (max - min) + min;
 }
 
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
 function toRadians (angle) {
   return angle * (Math.PI / 180);
+}
+
+function createMatrix(m, n) {
+    var result = [];
+    for(var i = 0; i < n; i++) {
+        result.push(new Array(m).fill(0));
+    }
+    return result;
 }

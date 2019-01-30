@@ -1,5 +1,6 @@
 function initialize(){
   const canvas = document.getElementById("canvas");
+  
 
   const sceneManager = new SceneManager(canvas);
 
