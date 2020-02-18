@@ -1,10 +1,10 @@
 # ThreeJS_Test
 
-## WORKING DEMOS:
+~~## WORKING DEMOS:~~
 
-http://nebrilad.altervista.org/
+~~http://nebrilad.altervista.org/~~
 
-Choose which demo you want to run.
+~~Choose which demo you want to run.~~
 
 ## HOW TO USE:
 
